@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Movacar" title="Movacar" src="https://github.com/caiquedevs/Movacar/blob/master/github/mobile.png" width="220px" />
+    <img alt="Movacar" title="Movacar" src="https://github.com/caiquedevs/Movacar/blob/master/github/logo.svg" width="220px" />
 </h1>
 
 <p align="center">
@@ -12,7 +12,7 @@
 <br>
 
 <p align="center">
-  <img alt="Movacar" src="https://github.com/caiquedevs/Movacar/blob/master/github/template.svg" width="100%">
+  <img alt="Movacar" src="https://github.com/caiquedevs/Movacar/blob/master/github/template.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
