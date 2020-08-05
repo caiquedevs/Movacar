@@ -21,6 +21,10 @@ Esse projeto esta sendo desenvolvido com as seguintes tecnologias:
 
 - [Node.js](https://nodejs.org/en/)
 - [React](https://reactjs.org)
+  - Redux
+  - Redux Persist
+  - Redux Saga
+  - Styled-Components
 - [React Native](https://facebook.github.io/react-native/)
 - [Expo](https://expo.io/)
 
