@@ -13,7 +13,7 @@
 
 <p align="center">
   <img alt="Movacar" src="https://github.com/caiquedevs/Movacar/blob/master/github/template.png" width="100%">
-  ![](demo.gif)
+  <img src="https://github.com/caiquedevs/Movacar/blob/master/demo.gif" width="100%" />
 </p>
 
 ## 🚀 Tecnologias
