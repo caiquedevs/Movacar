@@ -21,10 +21,19 @@
 Esse projeto esta sendo desenvolvido com as seguintes tecnologias:
 
 - [Node.js](https://nodejs.org/en/)
+  - Express
+  - Jsonwebtoken
+  - Knex
+  - Sqlite3
+  - Eslint
+  - Métodos http: get, post, delete
 - [React](https://reactjs.org)
   - Redux
   - Redux Persist
   - Redux Saga
+  - React-icons
+  - React-input-mask
+  - React-toastify
   - Styled-Components
 - [React Native](https://facebook.github.io/react-native/)
 - [Expo](https://expo.io/)
