@@ -73,6 +73,7 @@ export default function FormTravelComponent() {
         cep,
         city,
         state,
+        status: 'pending',
 
         id_driver: selectedDriver.id_driver,
         name_driver: selectedDriver.name,
