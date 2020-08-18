@@ -3,7 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const GlobalStyle = createGlobalStyle`
    /* largura do scroll vertical e horizonal*/
-   ::-webkit-scrollbar { width: 5px; height: 5px; }
+   ::-webkit-scrollbar { width: 2px; height: 4px; }
    /* Fundo do scroll*/
    ::-webkit-scrollbar-track { background: transparent; }
    /* Cor do scroll*/

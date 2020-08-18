@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Section = styled.nav`
   width: 100%;
-  max-width: 909px;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   padding: 30px 0;
 
   background: #2c2c37;
@@ -41,5 +41,18 @@ export const Section = styled.nav`
     font-weight: normal;
     font-size: 13px;
     color: #c2c1c3;
+  }
+
+  @media screen and (min-width: 992px) {
+    height: 100vh;
+  }
+  @media screen and (min-width: 0px) and (max-width: 991px) {
+    display: ${props => (props.travelsMobile ? 'flex' : 'none')};
+  }
+
+  @media screen and (min-width: 0px) and (max-width: 575px) {
+    h1:nth-child(1) {
+      padding: 0px 20px;
+    }
   }
 `;

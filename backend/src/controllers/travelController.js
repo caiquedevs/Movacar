@@ -29,7 +29,6 @@ module.exports = {
       if (!pin) return res.status(401).json({ error: 'Unauthorized access' });
 
       const {
-        created, status,
         address, number, description, date, hour, cep, city, state,
         id_driver, name_driver,
       } = req.body;
@@ -39,7 +38,7 @@ module.exports = {
       const id_travel = crypto.randomBytes(8).toString('HEX');
       const newDate = new Date();
 
-      await connection('travels').insert({
+      const newTravel = {
         id_travel,
         created: `${newDate.getDate()}/${newDate.getMonth()}/${newDate.getFullYear()} - ${newDate.getHours()}:${newDate.getMinutes()}`,
         status: 'pending',
@@ -56,18 +55,12 @@ module.exports = {
 
         id_driver,
         name_driver,
-      });
+      };
+
+      await connection('travels').insert(newTravel);
 
       return res.status(201).json({
-        id_travel,
-        created,
-        status,
-        description,
-        address,
-        date,
-        hour,
-        id_driver,
-        name_driver,
+        ...newTravel,
         msg: 'Travel registered successfully',
       });
     } catch (e) {

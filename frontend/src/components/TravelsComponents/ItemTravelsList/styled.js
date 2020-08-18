@@ -2,14 +2,23 @@ import styled from 'styled-components';
 
 export const UlTravels = styled.ul`
   width: 100%;
-  height: calc(100vh - 60px);
+  height: auto;
   padding: 0 30px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  overflow: auto;
+
+  @media screen and (min-width: 992px) {
+    height: calc(100vh - 60px);
+    overflow: auto;
+  }
+
+  @media screen and (min-width: 0px) and (max-width: 575px) {
+    padding: 0px 15px;
+    overflow: initial;
+  }
 `;
 
 export const LiTravels = styled.li`
@@ -25,6 +34,7 @@ export const LiTravels = styled.li`
   span {
     width: 100%;
     max-width: 150px;
+    margin-left: 20px;
     overflow: hidden;
     text-overflow: Ellipsis;
     display: -webkit-box;
@@ -97,35 +107,53 @@ export const HeaderLi = styled.header`
       margin-left: 30px;
     }
   }
+
+  @media screen and (min-width: 0px) and (max-width: 575px) {
+    span:nth-child(2),
+    span:nth-child(3) {
+      display: none;
+    }
+  }
 `;
 
 export const BodyLi = styled.div`
   input {
     appearance: none;
     display: none;
-    :checked + section {
-      height: 100px;
+    :checked + ul {
+      height: auto;
       opacity: 1;
       display: flex;
     }
   }
 
-  section {
+  ul {
     width: 100%;
     max-width: 843px;
     height: 0px;
-    padding: 0 30px;
+    padding: 30px;
     margin-top: -3px;
 
     display: none;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    flex-direction: column;
 
     background: #33333f;
     border-radius: 3px;
 
     opacity: 0;
     transition: 0.2s all;
+
+    li {
+      margin-bottom: 7px;
+      color: #c2c1c3;
+
+      strong {
+        margin-right: 7px;
+        color: #ffffff;
+      }
+    }
 
     div.infoGroup {
       span {

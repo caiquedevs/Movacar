@@ -45,22 +45,40 @@ export default function ItemTravelsList() {
 
             <BodyLi>
               <input type="checkbox" id={travel.id_travel} />
-              <section>
-                <div className="infoGroup">
-                  <h1>TRAVEL ID</h1>
-                  <span>{travel.id_travel}</span>
-                </div>
-
-                <div className="infoGroup">
-                  <h1>Created</h1>
-                  <span>{travel.created}</span>
-                </div>
-
-                <div className="infoGroup">
-                  <h1>Driver</h1>
-                  <span>{travel.name_driver}</span>
-                </div>
-              </section>
+              <ul>
+                <li>
+                  <strong>CREATED:</strong>
+                  {travel.created}
+                </li>
+                <li>
+                  <strong>ID DRIVER:</strong>
+                  {travel.id_driver}
+                </li>
+                <li>
+                  <strong>DRIVER:</strong>
+                  {travel.name_driver}
+                </li>
+                <li>
+                  <strong>DESC:</strong>
+                  {travel.description}
+                </li>
+                <li>
+                  <strong>ADDRESS:</strong>
+                  {`${travel.address} - ${travel.number}`}
+                </li>
+                <li>
+                  <strong>CEP:</strong>
+                  {travel.cep}
+                </li>
+                <li>
+                  <strong>CITY:</strong>
+                  {travel.city}
+                </li>
+                <li>
+                  <strong>UF:</strong>
+                  {travel.state}
+                </li>
+              </ul>
             </BodyLi>
           </LiTravels>
         ))}

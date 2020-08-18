@@ -28,7 +28,12 @@ export default function TravelsListComponent() {
   }
   if (drivers && drivers.length > 0 && travels && travels.length === 0) {
     return (
-      <Section pageActive={pageActive}>
+      <Section
+        pageActive={pageActive}
+        travelsMobile={
+          drivers && drivers.length > 0 && travels && travels.length === 0
+        }
+      >
         <figure>
           <img id="emptyTravels" src={emptyTravels} alt="Empty Travels" />
           <figcaption>Now just register your trips</figcaption>

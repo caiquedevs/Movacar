@@ -2,10 +2,9 @@ import styled from 'styled-components';
 
 export const SectionFormDriver = styled.section`
   width: 100%;
-  max-width: 377px;
-  min-width: 377px;
-  height: 100vh;
-  padding: 50px 40px;
+  max-width: 100%;
+  height: auto;
+  padding: 50px 30px;
 
   background: #23232c;
 
@@ -27,12 +26,19 @@ export const SectionFormDriver = styled.section`
     color: #c2c1c3;
     margin: 10px 0 30px 0;
   }
+
+  @media screen and (min-width: 992px) {
+    max-width: 377px;
+    height: 100vh;
+  }
 `;
 
 export const Form = styled.form`
   width: 100%;
+  max-width: 300px;
 
   label {
+    width: 100%;
     font-family: Russo One;
     font-size: 13px;
     color: #bfbfbf;
@@ -47,15 +53,25 @@ export const Form = styled.form`
   div.inputGroup {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 
     input {
-      max-width: 140px;
+      width: 100%;
     }
   }
 
   button {
     margin-top: 15px;
+  }
+
+  @media screen and (min-width: 992px) {
+    label {
+      width: auto;
+    }
+    div.inputGroup input {
+      max-width: 140px;
+    }
   }
 `;

@@ -93,6 +93,7 @@ module.exports = {
         msg: `${name} Registered successfully`,
       });
     } catch (e) {
+      console.log(e)
       return res.status(404).json({ error: "We couldn't find what you were looking for" });
     }
   },

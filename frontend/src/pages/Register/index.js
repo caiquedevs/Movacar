@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { isEmail } from 'validator';
+import { Warning, Error } from '../../components/Toast';
 import api from '../../services/api';
 
 import * as actions from '../../store/modules/auth/actions';
@@ -15,6 +18,16 @@ export default function RegisterPage() {
   const handleSubmit = async e => {
     e.preventDefault();
     const data = { nome, email };
+
+    if (!nome || nome.length < 3)
+      return toast.warning(<Warning text="Fill in your name" />);
+
+    if (email.length < 10)
+      return toast.warning(<Warning text="Fill in the email" />);
+
+    if (!isEmail(email)) {
+      return toast.error(<Error text="Invalid email entered" />);
+    }
 
     await api
       .post('/login', data)

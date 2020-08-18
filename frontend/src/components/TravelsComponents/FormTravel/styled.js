@@ -2,16 +2,16 @@ import styled from 'styled-components';
 
 export const SectionFormTravel = styled.section`
   width: 100%;
-  max-width: 909px;
-  height: 100vh;
-  padding: 70px 0 0 100px;
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 50px 15px 0 15px;
   overflow: auto;
 
   background: #2c2c37;
 
   display: ${props => (props.pageActive === 'travel' ? 'flex' : 'none')};
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
 
   header {
@@ -23,18 +23,42 @@ export const SectionFormTravel = styled.section`
       margin-right: 15px;
       color: #f9c71b;
       font-size: 22px;
+      transform: rotate(90deg);
     }
 
     h1 {
       font-weight: bold;
-      font-size: 25px;
+      font-size: 22px;
       color: #ffffff;
       display: flex;
     }
   }
+
+  @media screen and (min-width: 992px) {
+    max-width: 909px;
+    height: 100vh;
+    align-items: flex-start;
+    padding: 70px 0 0 100px;
+
+    header {
+      svg {
+        transform: rotate(0deg);
+      }
+      h1 {
+        font-size: 25px;
+      }
+    }
+  }
 `;
 
+// ================================================= //
+// ===================== FORM ====================== //
+// ================================================= //
+
 export const Form = styled.form`
+  width: 100%;
+  max-width: 280px;
+
   h1 {
     font-weight: bold;
     font-size: 25px;
@@ -50,74 +74,88 @@ export const Form = styled.form`
   }
 
   label {
+    width: auto;
     font-family: Russo One;
     font-size: 13px;
     color: #bfbfbf;
   }
   input {
+    width: 280px;
     margin-top: 7px;
     margin-bottom: 10px;
   }
 
   div.inputGroup:nth-child(2) {
-    width: 360px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    input#description {
-      width: 100%;
-      max-width: 170px;
-    }
-
-    input#date {
-      max-width: 80px;
-    }
-
-    input#hour {
-      max-width: 80px;
-    }
+    flex-wrap: wrap;
   }
 
-  div.inputGroup:nth-child(3) {
-    width: 360px;
+  div.inputGroup {
+    width: 100%;
+    max-width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
 
-    input#address {
+    label#description {
       width: 100%;
-      min-width: 265px;
     }
 
-    input#number {
-      max-width: 80px;
-    }
-  }
-
-  div.inputGroup:nth-child(4) {
-    width: 360px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    input#cep {
-      width: 100%;
-      max-width: 170px;
+    label#date,
+    label#hour {
+      width: 48%;
     }
 
-    input#uf {
-      max-width: 80px;
-      text-transform: uppercase;
+    label#address {
+      width: 190px;
     }
 
-    input#city {
-      max-width: 80px;
-      text-transform: uppercase;
+    label#number {
+      width: 80px;
+    }
+
+    label#cep {
+      width: 150px;
+    }
+
+    label#city {
+      width: 55px;
+    }
+
+    label#uf {
+      width: 55px;
     }
   }
 
   button {
     margin-top: 20px;
+  }
+
+  @media screen and (min-width: 992px) {
+    max-width: 400px;
+
+    div.inputGroup {
+      label#address {
+        max-width: 310px;
+        input {
+          width: 310px;
+          max-width: 310px;
+        }
+      }
+
+      label#description {
+        max-width: 220px;
+      }
+
+      label#cep {
+        width: 220px;
+      }
+
+      label#date,
+      label#hour,
+      label#number,
+      label#city,
+      label#uf {
+        width: 80px;
+      }
+    }
   }
 `;

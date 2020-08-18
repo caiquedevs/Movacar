@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -15,36 +15,16 @@ export default function ForgotPage() {
   const [email, setEmail] = useState('');
   const [pin, setPin] = useState('');
 
-  const [copySuccess, setCopySuccess] = useState('');
-  const textAreaRef = useRef(null);
-
   const data = {
     email,
   };
-
-  function copyToClipboard(e) {
-    textAreaRef.current.select();
-    document.execCommand('copy');
-    // This is just personal preference.
-    // I prefer to not show the the whole text area selected.
-    e.target.focus();
-    setCopySuccess('Copied!');
-  }
 
   const ShowPin = () => (
     <InfoModal>
       <div>
         <h1>Seu pin é:&nbsp;</h1>
         <h2>{pin}</h2>
-        <h2 type="text" ref={textAreaRef} value="Some text to copy">
-          Some text to copy
-        </h2>
       </div>
-
-      <button onClick={copyToClipboard} type="button">
-        COPY
-      </button>
-      {copySuccess}
     </InfoModal>
   );
 
@@ -52,11 +32,11 @@ export default function ForgotPage() {
     e.preventDefault();
 
     if (isEmpty(email)) {
-      return toast.warning('Preencha um email para continuar');
+      return toast.warning('Fill in an email to continue');
     }
 
     if (!isEmail(email)) {
-      return toast.error('Email inserido inválido');
+      return toast.error('Invalid email entered');
     }
 
     await api

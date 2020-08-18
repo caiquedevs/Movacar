@@ -100,7 +100,7 @@ export default function FormTravelComponent() {
         </h1>
 
         <div className="inputGroup">
-          <label>
+          <label id="description">
             DESCRIPTION
             <InputMask
               value={description}
@@ -108,10 +108,9 @@ export default function FormTravelComponent() {
               className="default"
               type="text"
               placeholder="Enter a description"
-              id="description"
             />
           </label>
-          <label>
+          <label id="date">
             DATE
             <InputMask
               mask="99/99"
@@ -121,10 +120,9 @@ export default function FormTravelComponent() {
               className="default"
               type="text"
               placeholder="d/m"
-              id="date"
             />
           </label>
-          <label>
+          <label id="hour">
             HOUR
             <InputMask
               mask="99:99"
@@ -134,13 +132,12 @@ export default function FormTravelComponent() {
               className="default"
               type="text"
               placeholder="h:m"
-              id="hour"
             />
           </label>
         </div>
 
         <div className="inputGroup">
-          <label>
+          <label id="address">
             ADDRESS
             <input
               value={address}
@@ -148,10 +145,9 @@ export default function FormTravelComponent() {
               className="default"
               type="text"
               placeholder="Enter travel address"
-              id="address"
             />
           </label>
-          <label>
+          <label id="number">
             NR
             <InputMask
               mask="9999"
@@ -161,13 +157,12 @@ export default function FormTravelComponent() {
               className="default"
               type="text"
               placeholder="0000"
-              id="number"
             />
           </label>
         </div>
 
         <div className="inputGroup">
-          <label>
+          <label id="cep">
             CEP
             <InputMask
               mask="99999-999"
@@ -177,10 +172,9 @@ export default function FormTravelComponent() {
               className="default"
               type="text"
               placeholder="Enter zip code"
-              id="cep"
             />
           </label>
-          <label>
+          <label id="city">
             CITY
             <InputMask
               mask="aa"
@@ -190,10 +184,9 @@ export default function FormTravelComponent() {
               className="default"
               type="text"
               placeholder="SV"
-              id="city"
             />
           </label>
-          <label>
+          <label id="uf">
             UF
             <InputMask
               mask="aa"
@@ -203,7 +196,6 @@ export default function FormTravelComponent() {
               className="default"
               type="text"
               placeholder="SP"
-              id="uf"
             />
           </label>
         </div>

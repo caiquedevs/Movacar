@@ -2,20 +2,20 @@ import styled from 'styled-components';
 
 export const ListDrivers = styled.nav`
   width: 100%;
-  max-width: 377px;
-  min-width: 377px;
-  height: 100vh;
-  padding: 30px 0;
+  max-width: 100%;
+  height: auto;
+  padding: 30px 15px;
 
   background: #23232c;
 
   display: ${props => (props.pageActive === 'driver' ? 'none' : 'flex')};
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
 
   figure {
-    height: 100vh;
+    width: 100%;
+    height: calc(100vh - 140px);
     display: flex;
     align-items: center;
     flex-direction: column-reverse;
@@ -37,7 +37,7 @@ export const ListDrivers = styled.nav`
     max-width: 343px;
     display: flex;
     align-items: center;
-    margin: 10px 0 30px 0;
+    margin-left: 10px;
 
     h1 {
       font-family: Russo One;
@@ -46,33 +46,70 @@ export const ListDrivers = styled.nav`
       font-weight: normal;
     }
   }
+
+  @media screen and (min-width: 992px) {
+    max-width: 377px;
+    height: 100vh;
+    padding: 30px 0;
+    align-items: center;
+
+    header {
+      margin: 10px 0 30px 0;
+    }
+
+    figure {
+      height: 100vh;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+  }
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+  }
+  @media screen and (min-width: 0px) and (max-width: 575px) {
+  }
 `;
 
 export const UlDrivers = styled.ul`
   width: 100%;
-  height: calc(100vh - 60px);
+  height: 200px;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   overflow: auto;
+
+  @media screen and (min-width: 992px) {
+    max-width: 377px;
+    height: calc(100vh - 60px);
+    margin-left: 0px;
+
+    flex-direction: column;
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+  }
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+  }
+  @media screen and (min-width: 0px) and (max-width: 575px) {
+  }
 `;
 
 export const LiDrivers = styled.li`
-  width: 100%;
+  width: 192px;
+  min-width: 192px;
   height: auto;
   max-width: 343px;
   min-height: 100px;
 
-  margin: 6px 0;
+  margin-right: 7px;
 
   div.liFadeIn {
-    width: 100%;
-    height: 100px;
+    width: 192px;
+    min-width: 192px;
+    height: 155px;
     padding: 15px 18px;
 
     background-color: #2c2c37;
-    border-radius: 3px;
+    border-radius: 10px;
 
     display: flex;
     flex-direction: column;
@@ -117,8 +154,8 @@ export const LiDrivers = styled.li`
 
     button.iconDriver {
       position: absolute;
-      top: -65px;
-      right: -310px;
+      top: -110px;
+      right: -150px;
       transition: 0.2s all;
 
       :hover svg path {
@@ -128,10 +165,8 @@ export const LiDrivers = styled.li`
 
     button.iconTrash {
       position: absolute;
-      bottom: -2px;
-      right: -309px;
-      visibility: hidden;
-      opacity: 0;
+      bottom: 0px;
+      right: -149px;
       transition: 0.2s all;
       display: ${props => (props.pageActive === 'travel' ? 'none' : 'block')};
 
@@ -139,6 +174,37 @@ export const LiDrivers = styled.li`
         fill: red;
       }
     }
+  }
+
+  @media screen and (min-width: 992px) {
+    width: 100%;
+    border-radius: 3px;
+    margin: 6px 0;
+
+    div.liFadeIn {
+      width: 100%;
+      height: 100px;
+    }
+
+    div.liFadeIn {
+      button.iconTrash {
+        visibility: hidden;
+        opacity: 0;
+        bottom: -2px;
+        right: -309px;
+      }
+
+      button.iconDriver {
+        top: -65px;
+        right: -310px;
+      }
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+  }
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+  }
+  @media screen and (min-width: 0px) and (max-width: 575px) {
   }
 `;
 

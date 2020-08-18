@@ -30,4 +30,8 @@ export const FilterTravels = styled.ul`
       display: inline-grid;
     }
   }
+
+  @media screen and (min-width: 0px) and (max-width: 575px) {
+    padding: 0px 20px;
+  }
 `;
