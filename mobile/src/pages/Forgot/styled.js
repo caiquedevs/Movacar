@@ -8,6 +8,13 @@ export const Main = styled.KeyboardAvoidingView`
   background-color: ${colors.black};
 `;
 
+export const Text = styled.Text`
+  margin-top: 15px;
+  font-size: 15px;
+  font-family: 'Roboto_400Regular';
+  color: ${colors.silver};
+`;
+
 export const H1 = styled.Text`
   margin-bottom: 10px;
 
